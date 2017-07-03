@@ -143,11 +143,12 @@ After training the final test accuracy was ~ 88% which is a very good classifica
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image12]{:width="200"}
-![alt text][image13]{:width="200"} 
-![alt text][image14]{:width="200"} 
-![alt text][image15]{:width="200"} 
-![alt text][image16]{:width="200"}
+<img src="imgs/stop_sign.png" width="200">
+<img src="imgs/pedestrian_sign.jpg" width="200">
+<img src="imgs/30km_sign.jpg" width="200">
+<img src="imgs/caution_sign.jpg" width="200">
+<img src="imgs/yield_sign.jpg" width="200">
+
 
 Second image was difficult to classifies because Pedestrian sign resembles a General Caution sign
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set 
@@ -189,4 +190,4 @@ For the second image , classifier mades a mistake. It wrongly classifies Pedestr
 | 2.5473916e-08	      	| Narrow roads on right					 		|
 | 2.4780041e-08		    | Roundabout mandatory      					|
 
-Classifier correctly classifies the rest of signs with a very high probability. 
+Classifier correctly classifies the rest of signs with very high probabilities. 
