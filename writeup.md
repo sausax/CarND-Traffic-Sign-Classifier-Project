@@ -58,7 +58,7 @@ signs data set:
 * The size of training set is 31367
 * The size of the validation set is 7842
 * The size of test set is 12630
-* The shape of a traffic sign image is 32x32
+* The shape of a traffic sign image is 32x32x3
 * The number of unique classes/labels in the data set is 43
 
 ####2. Include an exploratory visualization of the dataset.
@@ -144,42 +144,49 @@ After training the final test accuracy was ~ 88% which is a very good classifica
 Here are five German traffic signs that I found on the web:
 
 ![alt text][image12]{:width="200"}
- ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image13]{:width="200"} 
+![alt text][image14]{:width="200"} 
+![alt text][image15]{:width="200"} 
+![alt text][image16]{:width="200"}
 
-The first image might be difficult to classify because ...
-
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+Second image was difficult to classifies because Pedestrian sign resembles a General Caution sign
+####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set 
 
 Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Pedestrian     		| General Caution 								|
+| 30 km/h				| 30 km/h									    |
+| General Caution	    | General Caution					 			|
+| Yield			        | Yield      							        |
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ~88%
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. 
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
-
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the first image, the model is relatively sure that this is a stop sign (probability of 0.99), and the image does contain a stop sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| 0.99999994         	| Stop sign   									| 
+| 5.2332915e-08   		| No entry 										|
+| 2.1297833e-08			| Keep right									|
+| 1.2949982e-08	      	| Keep right ahead					 			|
+| 3.2493966e-10		    | Priority road      							|
 
 
-For the second image ... 
+For the second image , classifier mades a mistake. It wrongly classifies Pedestrian sign as General Caution. Although, Pedestrian is the second most probable with .09 probability. 
 
 
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 0.91073626         	| General caution   							| 
+| 0.08926335   			| Pedestrian 									|
+| 3.3878004e-07			| Right-of-way									|
+| 2.5473916e-08	      	| Narrow roads on right					 		|
+| 2.4780041e-08		    | Roundabout mandatory      					|
 
+Classifier correctly classifies the rest of signs with a very high probability. 
